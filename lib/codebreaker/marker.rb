@@ -1,5 +1,5 @@
- module Codebreaker
-   class Marker
+module Codebreaker
+  class Marker
     def initialize(secret)
       @secret = secret
     end
