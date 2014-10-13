@@ -1,4 +1,4 @@
-class Output
+class CodeBreakerOutput
   def messages
     @messages ||= []
   end
@@ -8,24 +8,24 @@ class Output
   end
 end
 
-def output
-  @output ||= Output.new
+def cb_output
+  @cb_output ||= CodeBreakerOutput.new
 end
 
 Given /^I am not yet playing$/ do
 end
 
 When /^I start a new game$/ do
-  game=Codebreaker::Game.new(output)
+  game=Codebreaker::Game.new(cb_output)
   game.start('1234')
 end
 
 Then /^I should see "([^"]*)"$/ do |message|
-  output.messages.should include(message)
+  cb_output.messages.should include(message)
 end
 
 Given /^the secret code is "([^"]*)"$/ do |secret|
-  @game = Codebreaker::Game.new(output)
+  @game = Codebreaker::Game.new(cb_output)
   @game.start(secret)
 end
 
@@ -34,5 +34,5 @@ When /^I guess "([^"]*)"$/ do |guess|
 end
 
 Then /^the mark should be "([^"]*)"$/ do |mark|
-  output.messages.should include(mark)
+  cb_output.messages.should include(mark)
 end
