@@ -24,6 +24,6 @@ exact match (the 3) and one number match (the 5), so the application
 responds with +-
 
 The game itself is not difficult or impressive and not a reason 
-for me to save the project but it is my first foray into Cucumber  
+for me to save the project but it is my first foray into Cucumber
 so I'm saving this as a reference. 
 
